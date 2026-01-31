@@ -21,32 +21,7 @@ La arquitectura se basa en los siguientes componentes:
 
 ## Diagrama de arquitectura
 
-![Architecture](architecture.png)
-
-┌──────────────────────┐
-│  Producer (Python)   │
-│  consumer.py         │
-│  producer.py         │
-│  (host machine)      │
-└─────────┬────────────┘
-          │
-          ▼
-┌──────────────────────┐
-│        Kafka         │
-│   (Docker container) │
-└─────────┬────────────┘
-          │
-          ▼
-┌──────────────────────┐
-│ Consumer (Python)    │
-│ (host machine)       │
-└─────────┬────────────┘
-          │
-          ▼
-┌──────────────────────┐
-│        Redis         │
-│   (Docker container) │
-└──────────────────────┘
+![Architecture](Architecture.png)
 
 ## Flujo de eventos
 

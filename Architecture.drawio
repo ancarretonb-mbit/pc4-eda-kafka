@@ -1,0 +1,65 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Página-1" id="dZLQnNGI9oF2eBRnNGgO">
+    <mxGraphModel dx="1019" dy="686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="130" width="520" x="210" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#f8e3a5, #6d5100);" value="&lt;b&gt;Producer&lt;/b&gt; (Python)&lt;div&gt;&lt;font face=&quot;Amasis MT Pro&quot;&gt;producer.py&lt;/font&gt;&lt;/div&gt;&lt;div&gt;Generates user events&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="50" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=light-dark(#f8e3a5, #6d5100);" value="&lt;b&gt;Consumer&lt;/b&gt; (Python)&lt;div&gt;&lt;font face=&quot;Amasis MT Pro&quot;&gt;consumer.py&lt;/font&gt;&lt;/div&gt;&lt;div&gt;Idempotent processing&lt;/div&gt;&lt;div&gt;Consumer group&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="340" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Kafka&lt;/b&gt;&amp;nbsp;&lt;div&gt;Topic: user-events&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="230" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Redis&lt;/b&gt;&lt;div&gt;Derived state&lt;/div&gt;&lt;div&gt;Counters and aggregates&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="340" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-6" edge="1" parent="1" source="LmyI7JZ15B0lUyZZqFht-1" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="LmyI7JZ15B0lUyZZqFht-2" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="310" as="sourcePoint" />
+            <mxPoint x="440" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-7" connectable="0" parent="LmyI7JZ15B0lUyZZqFht-6" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Publish events" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-11" edge="1" parent="1" source="LmyI7JZ15B0lUyZZqFht-2" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.476;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;" target="LmyI7JZ15B0lUyZZqFht-4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="240" as="sourcePoint" />
+            <mxPoint x="400" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-12" connectable="0" parent="LmyI7JZ15B0lUyZZqFht-11" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Consume events" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-15" edge="1" parent="1" source="LmyI7JZ15B0lUyZZqFht-4" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="LmyI7JZ15B0lUyZZqFht-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="380" as="sourcePoint" />
+            <mxPoint x="553" y="459" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-16" connectable="0" parent="LmyI7JZ15B0lUyZZqFht-15" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Update state" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-18" edge="1" parent="1" source="LmyI7JZ15B0lUyZZqFht-4" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="LmyI7JZ15B0lUyZZqFht-21" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="640" y="370" as="sourcePoint" />
+            <mxPoint x="506" y="469" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-19" connectable="0" parent="LmyI7JZ15B0lUyZZqFht-18" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Send failed events" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LmyI7JZ15B0lUyZZqFht-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;div&gt;&lt;b&gt;Kafka&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Topic: user-events-dlq&lt;/div&gt;&lt;div&gt;(Dead Letter Queue)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="540" y="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
